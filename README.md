@@ -16,13 +16,38 @@ The data registry stores references to the remote storage for anonymized data. S
 
 Using this registry, we assume you have a project under `git` and `dvc` version control. List the content of this registry using the command
 ```
-dvc list ...
+dvc list -R https://github.com/cdeck3r/GradePredictionData
 ```
 
-This command just downloads the data from the registry into the project. 
+It displays the repository content.
+
 ```
-dvc get...
+.dvcignore
+.gitignore
+Dockerfiles/Dockerfile.jupyops
+LICENSE
+README.md
+data-registry/.gitignore
+data-registry/RTWIBNet_W22.dvc
+data-registry/RTWIBNet_W22/RTWIBNet_W22_grades.csv
+data-registry/RTWIBNet_W22/RTWIBNet_W22_log.csv
+data-registry/RTWIBSE_W22.dvc
+data-registry/RTWIBSE_W22/RTWIBSE_W22_grades.csv
+data-registry/RTWIBSE_W22/RTWIBSE_W22_log.csv
+data-registry/RTWIBStat_W22.dvc
+data-registry/RTWIBStat_W22/RTWIBStat_W22_grades.csv
+data-registry/RTWIBStat_W22/RTWIBStat_W22_log.csv
+data/.gitkeep
+docker-compose.yml
+...
 ```
+
+Download the data specified in the registry as `data-registry/RTWIBNet_W22` into your current working directory from the `dvc remote default`.
+```
+dvc get https://github.com/cdeck3r/GradePredictionData data-registry/RTWIBNet_W22
+```
+Note again, the data is retrieved from the `dvc remote default`.
+
 
 The next command tracks the data from the project using the registry.
 ```
