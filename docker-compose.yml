@@ -14,7 +14,7 @@ services:
       - JUPYTER_ENABLE_LAB=yes
       - GRANT_SUDO=yes
     volumes:
-      - repo:/AMLRepo
+      - repo:/GradePredictionData
       - data:${APP_ROOT}/data
       - notebooks:/home/jovyan/work
       - log:${APP_ROOT}/log
