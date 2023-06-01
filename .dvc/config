@@ -1,0 +1,5 @@
+[core]
+    remote = datareg
+['remote "datareg"']
+    url = ssh://aml@digital.hhz.de/grademl
+    ask_password = true
