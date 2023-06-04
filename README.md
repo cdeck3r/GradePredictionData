@@ -46,12 +46,11 @@ Download the data specified in the registry as `data-registry/RTWIBNet_W22` into
 ```
 dvc get https://github.com/cdeck3r/GradePredictionData data-registry/RTWIBNet_W22
 ```
-Note again, the data is retrieved from the `dvc remote default`.
 
 
-The next command tracks the data from the project using the registry.
+The next command downloads the data from the registry into the workspace and track it.
 ```
-dvc import ...
+dvc import https://github.com/cdeck3r/GradePredictionData data-registry/RTWIBNet_W22
 ```
 One may issue `dvc update` to retrieve updated versions.
 
@@ -70,11 +69,11 @@ The diagram below depicts the containers, their dependencies and ports (number i
 
 # In the container, this is the directory where the code is found
 # Example:
-APP_ROOT=/GPDR
+APP_ROOT=/GradePredictionData
 
 # the HOST directory containing directories to be mounted into containers
 # Example:
-VOL_DIR=/dev/GPDR
+VOL_DIR=/dev/GradePredictionData
 ```
 
 **Create** docker image. Please see [Dockerfiles/](Dockerfiles directory) for details.
