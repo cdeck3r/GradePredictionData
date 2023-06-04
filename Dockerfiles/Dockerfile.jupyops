@@ -30,10 +30,4 @@ USER jovyan
 RUN pip3 install --upgrade pip setuptools wheel \
     && pip3 install pyarrow pandas-profiling verifyml \
     && pip3 install papermill jupytext snakemake \
-    && pip3 install jupyterlab_tabnine \
     && pip3 install dvc[ssh]
-    
-RUN pip3 install -U codeium-jupyter \
-    && jupyter nbextension install --py codeium --user \
-    && jupyter nbextension enable --py codeium --user \
-    && jupyter serverextension enable --py codeium  --user
